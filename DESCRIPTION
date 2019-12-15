@@ -1,0 +1,25 @@
+Package: vgnttr
+Title: Automated Vignette Writing
+Version: 0.0.1
+Authors@R: 
+    person(given = "Donatus",
+           family = "Herre",
+           role = c("aut", "cre"),
+           email = "git@herre.io")
+Description: This package serves as an example for using the
+    facilities of vignettes provided by the regular R package
+    development environment. For the production of the vignettes,
+    devtools, bookdown, knitr, pandoc and LaTeX are used.
+Encoding: UTF-8
+LazyData: true
+Imports:
+    DiagrammeR,
+    bookdown,
+    datamodelr,
+    devtools,
+    knitr,
+    kableExtra,
+    rmarkdown,
+    webshot
+VignetteBuilder: knitr
+RoxygenNote: 7.0.2

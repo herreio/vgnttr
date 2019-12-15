@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%
+%%%%% Header %%%%%
+%%%%%%%%%%%%%%%%%%
+
+\documentclass[fontsize=12pt,
+               paper=a4,
+               headings=small,
+               headsepline=on,
+               twoside=false,
+               parskip=half,
+               listof=ignorechapter,
+               listof=entryprefix
+               ]{scrreprt}
+
+%****************%
+%*** Packages ***%
+%****************%
+
+\usepackage[left=3cm,
+            top=3cm,
+            right=3cm,
+            bottom=3cm
+            ]{geometry}             % manage format
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage[french,
+            ngerman,
+            english]{babel}         % manage languages
+\usepackage{amssymb,amsmath}        % math symbols
+\usepackage{fourier}                % default serif/math
+\usepackage{tgheros}                % default sans
+\usepackage{ascii}                  % default mono
+\usepackage[T1]{fontenc}            % font encoding
+\usepackage{hyphenat}               % manage hyphenation
+\usepackage{microtype}              % improve typography
+\usepackage{fancyvrb}               % manage verbatim
+\usepackage{fvextra}                % improve verbatim
+\usepackage[babel]{csquotes}        % quotation marks
+\usepackage{setspace}               % line spacing
+\usepackage{tabularx}               % manage tables
+\usepackage{booktabs}               % beautify tables
+\usepackage{longtable}              % tables spanning pages
+\usepackage{tikz}                   % create graphics
+\usepackage[hyphens]{url}           % break long urls
+\usepackage[unicode=true]{hyperref} % manage references
+\usepackage[hypcap=true]{caption}   % manage captions
+\usepackage[style=numeric,
+            backend=biber,
+            autolang=other
+            ]{biblatex}             % manage bibliography
+\usepackage{scrlayer-scrpage}       % manage page styles
+\usepackage{chngcntr}               % change counter
+\usepackage{float}                  % position graphics
+
+%*****************%
+%*** Meta Data ***%
+%*****************%
+
+\title{Automated Vignettes Writing}
+\subtitle{}
+\author{Donatus Herre}
+
+%**************%
+%** Hyperref **%
+%**************%
+
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            colorlinks=true,
+            citecolor=magenta,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfauthor={Donatus Herre},
+            pdfkeywords = {},  
+            pdftitle={Automated Vignettes Writing},
+            pdfborder={0 0 0}}
+\urlstyle{same}
+
+%**********************%
+%** Syntax Highlight **%
+%**********************%
+
+
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,breaklines=true}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small,breaklines=true,commandchars=\\\{\}}
+
+%****************%
+%*** Graphics ***%
+%****************%
+
+\usetikzlibrary{automata,fit}
+
+%********************%
+%*** Bibliography ***%
+%********************%
+
+\addbibresource{references/sources.bib}
+
+% \addbibresource{../../ref/public/data/ref.bib}
+
+% dont put family name in caps (french)
+\DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily}
+
+%*************%
+%*** Lists ***%
+%*************%
+
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%******************%
+%*** Page Style ***%
+%******************%
+
+\automark{chapter}
+\automark*{section} % use * to preserve previous setting
+\setkomafont{pageheadfoot}{\small}
+\setkomafont{caption}{\small\sffamily\bfseries}
+\setkomafont{captionlabel}{\small\sffamily\bfseries}
+\deffootnote{0.75em}{1em}{\thefootnotemark\ }
+% \setfootnoterule[0.1em]{\textwidth}
+
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+\renewcaptionname{ngerman}{\tablename}{Tab.}
+
+\addto\extrasngerman{\def\figureautorefname{Abb.}}
+\addto\extrasngerman{\def\tableautorefname{Tab.}}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{footnote}{chapter}
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%% Document %%%%%
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagenumbering{roman}
+
+%******************%
+%*** TITLE PAGE ***%
+%******************%
+
+\maketitle
+
+%*************************%
+%*** TABLE OF CONTENTS ***%
+%*************************%
+
+\newpage
+\begingroup
+\clearpage
+\pdfbookmark{\contentsname}{toc}
+\hypersetup{linkcolor=black}
+\renewcommand*{\chapterpagestyle}{empty}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\endgroup
+
+%*****************%
+%*** TEXT BODY ***%
+%*****************%
+
+\newpage
+\pagenumbering{arabic}
+\renewcommand\thefigure{\arabic{figure}}
+\renewcommand\thetable{\arabic{table}}
+\renewcommand{\theequation}{\arabic{equation}}
+\frenchspacing
+
+\chapter{Introduction}\label{introduction}
+
+This is the first parapgraph. Document generation is possible through
+\textcite{Xie2016} and \textcite{Xie2019}.
+
+See also
+\href{https://rstudio.github.io/rstudio-extensions/rmarkdown_templates.html}{R
+Markdown Document Templates}.
+
+\pagebreak
+
+\begin{figure}[H]
+\includegraphics[width=1\linewidth]{figures/topicterms} \caption{\label{fig:topic97}Most relevant terms of topic 97}\label{fig:t-97}
+\end{figure}
+
+\nocite{*}
+
+\pagebreak
+
+\singlespacing
+
+\printbibliography[title=Sources,heading=bibintoc]
+\pagebreak
+
+\end{document}
+
+%***********************%
+%*** END OF DOCUMENT ***%
+%***********************%

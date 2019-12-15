@@ -1,0 +1,45 @@
+---
+title: "Automated Vignettes Writing"
+author: "Donatus Herre"
+date: "`r Sys.Date()`"
+bibliography:
+  - references/sources.bib
+vignette: >
+  %\VignetteIndexEntry{Automated Vignettes Writing}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  error = FALSE,
+  warning = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+```{r getwd}
+# print(getwd())
+# devtools::load_all()
+# figs <- system.file("vignettes/figures", package="vgnttr")
+figs <- "figures"
+fig1 <- file.path(figs, "topicterms.png")
+# print(fig1)
+```
+
+This is the first parapgraph. Document generation is possible through @Xie2016 and @Xie2019.
+
+See also [R Markdown Document Templates](https://rstudio.github.io/rstudio-extensions/rmarkdown_templates.html).
+
+\pagebreak
+
+```{r t-97, fig.pos="H", fig.cap="\\label{fig:topic97}Most relevant terms of topic 97", fig.align="c", out.width = "100%"}
+knitr::include_graphics(fig1)
+```
+
+\nocite{*}

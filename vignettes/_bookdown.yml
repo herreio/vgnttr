@@ -1,0 +1,4 @@
+book_filename: "doc"
+output_dir: "../inst/book"
+delete_merged_file: true
+rmd_files: ["main.Rmd"]

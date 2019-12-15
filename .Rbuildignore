@@ -1,0 +1,7 @@
+^packrat/
+^\.Rprofile$
+^doc$
+^Meta$
+^reports$
+^.*\.Rproj$
+^\.Rproj\.user$

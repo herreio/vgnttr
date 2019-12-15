@@ -1,0 +1,12 @@
+bookdown::pdf_book:
+  highlight: kate
+  highlight_bw: no
+  keep_tex: yes
+  latex_engine: pdflatex
+  template: "./includes/template.tex"
+  toc_depth: 3
+  toc_unnumbered: yes
+  citation_package: biblatex
+  pandoc_args: [
+      "--top-level-division=chapter",
+    ]

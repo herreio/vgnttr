@@ -1,0 +1,17 @@
+---
+title: "Experiment"
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE,
+    error = FALSE, warning = FALSE)
+```
+
+## Diameter, Height and Volume for Black Cherry Trees
+
+```{r}
+data(trees)
+library(dplyr)
+as_tibble(trees)
+```

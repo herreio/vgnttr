@@ -16,8 +16,6 @@ Imports:
     bookdown,
     devtools,
     knitr,
-    kableExtra,
-    rmarkdown,
-    webshot
+    rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 7.0.2

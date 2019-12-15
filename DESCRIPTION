@@ -13,9 +13,7 @@ Description: This package serves as an example for using the
 Encoding: UTF-8
 LazyData: true
 Imports:
-    DiagrammeR,
     bookdown,
-    datamodelr,
     devtools,
     knitr,
     kableExtra,

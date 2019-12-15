@@ -9,7 +9,7 @@ Authors@R:
 Description: This package serves as an example for using the
     facilities of vignettes provided by the regular R package
     development environment. For the production of the vignettes,
-    devtools, bookdown, knitr, pandoc and LaTeX are used.
+    devtools, bookdown, rmarkdown, knitr, pandoc and LaTeX are used.
 Encoding: UTF-8
 LazyData: true
 Imports:

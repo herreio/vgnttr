@@ -40,6 +40,11 @@ build <- function(type="vignette", move=T, pkg="vgnttr") {
 }
 
 post_vignette <- function() {
+    # check if out dir exists
+    if (!dir.exists("inst/book")) {
+      cat("create dir inst/book...\n")
+      dir.create("inst/book", recursive=T)
+    }
     # we assume the build was successfull
     done <- T
     # move .pdf file to inst/book

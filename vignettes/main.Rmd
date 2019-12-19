@@ -34,7 +34,10 @@ fig1 <- file.path(figs, "topicterms.png")
 
 This is the first parapgraph. Document generation is possible through @Xie2016 and @Xie2019.
 
-See also [R Markdown Document Templates](https://rstudio.github.io/rstudio-extensions/rmarkdown_templates.html).
+See also:
+
+- [R Markdown Document Templates](https://rstudio.github.io/rstudio-extensions/rmarkdown_templates.html).
+- [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
 
 \pagebreak
 
